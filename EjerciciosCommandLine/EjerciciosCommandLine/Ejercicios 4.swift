@@ -8,7 +8,6 @@
 
 import Foundation
 
-
 public class Ejercicios4 {
     
     public func Ejercicio811() {
@@ -311,7 +310,6 @@ public class Ejercicios4 {
         func actualizarPantalla()
     }
 
-    
     class Sensor {
         var delegado: Actualizable?
 
@@ -323,7 +321,6 @@ public class Ejercicios4 {
         }
     }
 
-    
     class ControladorPantalla: Actualizable {
         let sensor = Sensor()
 
@@ -369,7 +366,6 @@ public class Ejercicios4 {
     protocol FormularioDelegate {
         func formularioInvalido(errores: [String])
     }
-
     
     class Formulario {
         var delegate: FormularioDelegate?
@@ -400,7 +396,7 @@ public class Ejercicios4 {
             }
         }
     }
-
+    
     class ControladorFormulario: FormularioDelegate {
         let formulario = Formulario()
 
@@ -421,9 +417,29 @@ public class Ejercicios4 {
             }
         }
     }
+    
+    public func intercambiarValores(a: Any, b: Any) -> (Any, Any) {
+        return (b, a)
+    }
+    
+    public func buscarValorEnArray<T: Equatable>(array: [T], valorABuscar: T) -> Bool {
+        for item in array {
+            if item == valorABuscar {
+                return true
+            }
+        }
+        return false
+    }
 
-
-
+    public func devolverPrimerElemento<T: Equatable>(array: [T]) -> T? {
+        return array.first
+    }
+    
+    public func ImprimirElementosArray<T: Equatable>(array: [T]) {
+        for item in array {
+            print(item)
+        }
+    }
     
 }
 
